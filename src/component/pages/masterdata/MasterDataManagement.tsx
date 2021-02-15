@@ -84,7 +84,7 @@ class MasterDataManagement extends BaseComponent {
             </div>
         }
         return (
-            <div id="MasterDataManagement" className="container-fluid">
+            <div id="MasterDataManagement" className="container-fluid section-body">
                 <h2>{this.state.entityProperty.alias}</h2>
                 <MasterDataList  entityProperty={this.state.entityProperty} />
             </div>

@@ -1,9 +1,9 @@
 #sidebar {
   position: fixed;
   /* background-color: black; */
-  height: 100%;
+  height: 100vh;
   width: 250px;
-  margin-top: 75px;
+  padding-top: 75px;
   z-index: 50;
   border-right: solid 1px #aaaaaa;
 }
@@ -92,7 +92,14 @@
 
 @media screen and (min-width: 992px) {
   #sidebar {
+    overflow: scroll;
     display: block;
+    background-color: #343a40;
+    padding-bottom: 200px;
+    background-image: url("/sidebar-bg.png");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
   } 
   .sidebar-item-brand {
     display: none;

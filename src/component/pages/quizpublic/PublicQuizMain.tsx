@@ -9,10 +9,9 @@ import PublicQuizService from '../../../services/PublicQuizService';
 import Quiz from '../../../models/Quiz';
 import Filter from '../../../models/Filter';
 import WebResponse from '../../../models/WebResponse';
-import Spinner from '../../loader/Spinner';
+import  './quiz.css';
 import NavigationButtons from '../../navigation/NavigationButtons';
-import QuizList from '../quizshared/QuizList';
-import Card from './../../container/Card';
+import QuizList from '../quizshared/QuizList'; 
 
 class IState {
     quizList: Quiz[] = new Array();
@@ -76,7 +75,7 @@ class PublicQuizMain extends BaseMainMenus {
         const filter: Filter = this.state.filter;
         const startNumber = (filter.limit ?? 0) * (filter.page ?? 0);
         return (
-            <div id="PublicQuizMain" style={{ marginTop: '20px', }} className="container-fluid">
+            <div id="PublicQuizMain" style={{ marginTop: '20px', }} className="quiz-wrapper container-fluid">
                 <h2>Take Quiz</h2>
                 <div className="alert alert-info">
                     Challenge your self

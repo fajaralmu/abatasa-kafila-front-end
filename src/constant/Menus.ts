@@ -71,70 +71,7 @@ const _menus: Menu[] = [
         showSidebar: false,
         role : []
     },
-    {
-        code: LESSONS,
-        name: "Lessons",
-        url: "/lessons",
-        menuClass: "fa fa-home",
-        active: false,
-        authenticated: false,
-        showSidebar: true,
-        role : []
-    },
-    {
-        code: EVENTS,
-        name: "Events",
-        url: "/events",
-        menuClass: "fa fa-calendar-week",
-        active: false,
-        authenticated: false,
-        showSidebar: true,
-        role : [],
-        subMenus: [
-            {
-                code: 'e_public_speaking',
-                name: 'Public Speaking',
-                url: 'publicspeaking',
-                menuClass: 'fas fa-broadcast-tower',
-                role : [],
-            },
-            {
-                code: 'e_skills',
-                name: 'Skill',
-                url: 'skill',
-                menuClass: 'fas fa-basketball-ball',
-                role : [],
-            }
-        ]
-    },
-    
-    {
-        code: GALLERY,
-        name: "Gallery",
-        url: "/gallery",
-        menuClass: "fa fa-photo-video",
-        active: false,
-        authenticated: false,
-        showSidebar: true,
-        role: [],
-        subMenus: [
-            {
-                code: 'gallery_picture',
-                name: 'Pictures',
-                url: 'picture',
-                menuClass: 'fas fa-images',
-                role: [],
-
-            },
-            {
-                code: 'gallery_video',
-                name: 'Videos',
-                url: 'video',
-                menuClass: 'fas fa-video',
-                role: [],
-            }
-        ]
-    },
+   
     {
         code: DASHBOARD,
         name: "Dashboard",

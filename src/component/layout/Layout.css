@@ -2,6 +2,10 @@
   position: absolute;
 }
 
+#content {
+  padding: 0px;
+}
+
 @media screen and (max-width: 991px) {
   .menu-label  {
     display: none;
@@ -20,5 +24,19 @@
   #app-content {
     padding-left: 270px;
     margin-top: 20px;
+    background-color: rgb(9, 26, 78);
   }
+}
+ 
+.section-body {
+  padding-bottom: 180px;
+  min-height: 90vh;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-image: url("/footer.png");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  border-radius: 10px;
 }

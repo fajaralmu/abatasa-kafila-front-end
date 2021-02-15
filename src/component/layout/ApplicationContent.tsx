@@ -14,18 +14,13 @@ import Menu from '../../models/settings/Menu';
 import SettingsMain from '../pages/settings/SettingsMain';
 import UserProfile from '../pages/settings/UserProfile';
 import EditApplicationProfile from '../pages/settings/EditApplicationProfile';
-import AboutUs from './../pages/home/AboutUs';
-import LessonMain from '../pages/lesson/LessonMain';
-import LessonContent from '../pages/lesson/LessonContent';
+import AboutUs from './../pages/home/AboutUs'; 
 import QuizManagementMain from '../pages/quizmanagement/QuizManagementMain';
 import QuizManagementForm from '../pages/quizmanagement/QuizManagementForm';
 import QuizDetail from '../pages/quizmanagement/QuizDetail';
 import PublicQuizMain from '../pages/quizpublic/PublicQuizMain';
-import PublicQuizChallenge from '../pages/quizpublic/challenge/PublicQuizChallenge';
-import GalleryMain from '../pages/gallery/GalleryMain';
-import GalleryPicture from '../pages/gallery/picture/GalleryPicture';
-import QuizHistoryPage from '../pages/dashboard/QuizHistoryPage';
-import GalleryVideo from '../pages/gallery/video/GalleryVideo';
+import PublicQuizChallenge from '../pages/quizpublic/challenge/PublicQuizChallenge';  
+import QuizHistoryPage from '../pages/dashboard/QuizHistoryPage'; 
 
 class ApplicationContent extends BaseComponent {
 
@@ -38,7 +33,7 @@ class ApplicationContent extends BaseComponent {
     }
     render() {
         return (
-            <div style={{ paddingTop: '65px' }}>
+            <Fragment>
                 <Switch>
                     <Route exact path="/login" render={
                         (props: any) =>
@@ -57,18 +52,7 @@ class ApplicationContent extends BaseComponent {
                         (props: any) =>
                             <AboutUs />
                     } />
-                    {/* -------- masterdata -------- */}
-                    <Route exact path="/lessons" render={
-                        (props: any) =>
-                            <LessonMain setSidebarMenus={this.setSidebarMenus} />
-                    } />
-                    <Route exact path="/lessons/:categoryCode" render={
-                        (props: any) =>
-                            <LessonMain setSidebarMenus={this.setSidebarMenus} />
-                    } />
-                   
-
-
+                    
 
                     {/* -------- masterdata -------- */}
                     <Route exact path="/management" render={
@@ -87,9 +71,8 @@ class ApplicationContent extends BaseComponent {
                 <Settings />
                 <MemberQuiz />
                 <QuizManagement />
-                <Dashboard />
-                <Gallery/>
-            </div>
+                <Dashboard /> 
+            </Fragment>
         )
     }
     componentDidMount() {
@@ -97,25 +80,7 @@ class ApplicationContent extends BaseComponent {
     }
 
 }
-
-const Gallery = (props) => {
-
-    return (
-        <Switch>
-             {/* ---------- gallery --------- */}
-             <Route exact path="/gallery" render={
-                        (props: any) => <GalleryMain />
-                    } />
-                    <Route exact path="/gallery/picture" render={
-                        (props: any) => <GalleryPicture />
-                    } />
-                    <Route exact path="/gallery/video" render={
-                        (props: any) => <GalleryVideo />
-                    } />
-
-        </Switch>
-    )
-}
+ 
 
 const Dashboard = (props) => {
     return (

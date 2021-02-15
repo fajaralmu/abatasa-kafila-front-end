@@ -6,8 +6,7 @@ import { connect } from 'react-redux';
 import { mapCommonUserStateToProps } from '../../../../constant/stores';
 import BaseMainMenus from '../../../layout/BaseMainMenus';
 import User from './../../../../models/User';
-import { baseImageUrl } from './../../../../constant/Url';
-
+import '../Dashboard.css';
 
 class DashboardMain extends BaseMainMenus {
     constructor(props: any) {
@@ -18,7 +17,7 @@ class DashboardMain extends BaseMainMenus {
         const user: User | undefined = this.getLoggedUser();
         if (!user) return null;
         return (
-            <div id="DashboardMain" className="container-fluid">
+            <div id="DashboardMain" className="section-body container-fluid" >
                 <h2>Dashboard</h2>
                 <div className="alert alert-info">
                     Welcome, <strong>{user.displayName}  </strong>

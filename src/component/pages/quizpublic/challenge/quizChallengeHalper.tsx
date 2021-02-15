@@ -29,7 +29,7 @@ export const StatusTImeout = (props) => {
 export const QuizLanding = (props:{quiz:Quiz, start:Function}) => {
     const quiz = props.quiz;
     return (
-        <div style={{ marginTop: '20px', paddingTop: '20px' }} className="text-center container-fluid">
+        <div style={{ marginTop: '20px', paddingTop: '20px' }} className="text-center quiz-wrapper container-fluid">
         <img height="250" src={quiz.image ? baseImageUrl() + quiz.image : "/logo192.png"} className="rounded-circle" />
         <h3><strong>{quiz.title}</strong></h3>
         <p>Duration: {timerString(quiz.duration)}</p>

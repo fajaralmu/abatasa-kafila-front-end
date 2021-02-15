@@ -15,7 +15,7 @@ import QuizTimer from './QuizTimer';
 import { RertyPage, QuizResultInfo, StatusTImeout, QuizLanding } from './quizChallengeHalper';
 import QuizHistoryModel from './../../../../models/QuizHistory';
 import { doItLater } from './../../../../utils/EventUtil';
-
+import '../quiz.css';
 class IState {
     quiz: Quiz | undefined = undefined;
     loading: boolean = false;
@@ -242,14 +242,14 @@ class PublicQuizChallenge extends BaseComponent {
 
         if (!this.state.loading && quiz.getQuestionCount() == 0) return <SimpleError style={style} children="Quiz in currently unavailable" />
         if (this.state.timeout) return (<StatusTImeout />)
-        if (this.state.loading) return (<div style={style} className="container-fluid"><Spinner /></div>)
+        if (this.state.loading) return (<div style={style} className="quiz-wrapper container-fluid"><Spinner /></div>)
         if (quiz && !this.state.running) return (<QuizLanding quiz={quiz} start={this.start} />)
 
         quiz.showAllQuestion = quiz.showAllQuestion || undefined != this.state.quizResult;
 
         const questionTimered = quiz?.questionsTimered == true && this.state.quizResult == undefined;
         return (
-            <div style={style} className="container-fluid">
+            <div style={style} className="quiz-wrapper container-fluid">
                 {!this.state.quizResult && quiz && quiz.questionsTimered == false ?
                     <QuizTimer latestUpdate={this.state.latestUpdate} ref={this.timerRef} onTimeout={this.setFailedTimeout} duration={quiz.duration ?? 0} />
                     : null}

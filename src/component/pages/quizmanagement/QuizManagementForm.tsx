@@ -200,7 +200,7 @@ class QuizManagementForm extends BaseComponent {
         const quiz: Quiz = this.state.quiz;
         const questions: QuizQuestion[] = quiz.questions ?? [];
         return (
-            <div id="QuizManagementForm" className="container-fluid">
+            <div id="QuizManagementForm" className="container-fluid section-body">
                 <h2>Quiz Form</h2>
 
                 <form onSubmit={this.submitQuiz} >

@@ -87,7 +87,7 @@ class MasterDataMain extends BaseMainMenus {
         }
         const properties: ManagementProperty[] = this.masterDataService.managementProperties;
         return (
-            <div className="container-fluid">
+            <div className="container-fluid section-body">
                 <h2>Master Data Page</h2>
                 <div className="row">
                     {properties.map(property => {
