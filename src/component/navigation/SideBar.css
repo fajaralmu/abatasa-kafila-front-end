@@ -91,15 +91,9 @@
 }
 
 @media screen and (min-width: 992px) {
-  #sidebar {
-    overflow: scroll;
+  #sidebar { 
     display: block;
-    background-color: #343a40;
-    padding-bottom: 200px;
-    background-image: url("/sidebar-bg.png");
-    background-position: bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-color: #343a40; 
   } 
   .sidebar-item-brand {
     display: none;

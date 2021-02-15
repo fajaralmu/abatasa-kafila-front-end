@@ -9,12 +9,3 @@
     background-position: center;
     clear:both;
 }
-.home-wrapper {
-    padding: 0;
-    min-height: 95vh;
-    margin: 0;
-    background-image: url("/footer.png");
-    background-position: bottom;
-    background-size: contain;
-    background-repeat: no-repeat;
-}
