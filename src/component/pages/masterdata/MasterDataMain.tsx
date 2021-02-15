@@ -11,6 +11,7 @@ import Menu from '../../../models/settings/Menu';
 import ManagementProperty from '../../../models/ManagementProperty';
 import MasterDataManagement from './MasterDataManagement';
 import { AuthorityType } from '../../../models/AuthorityType';
+import Spinner from './../../loader/Spinner';
 
 interface IState {
     code?: string
@@ -83,7 +84,7 @@ class MasterDataMain extends BaseMainMenus {
             return <MasterDataManagement  code={this.getCode()} />
         }
         if (this.masterDataService.managementProperties.length == 0) {
-            return <div className="container-fluid"><h3>Loading</h3></div>
+            return <div className="container-fluid  section-body"><Spinner/></div>
         }
         const properties: ManagementProperty[] = this.masterDataService.managementProperties;
         return (
