@@ -107,25 +107,20 @@ export default class QuizBody extends Component<Props, State> {
         return (
             <div>
                 <h1><i className="fas fa-feather-alt" />&nbsp;{quiz.title}</h1>
-                <div className='alert alert-info'>
+                {/* <div className='alert alert-info'>
                     <FormGroup label="Started at">
                         {quiz.startedDate ? new Date(quiz.startedDate).toLocaleString() : "-"}
                     </FormGroup>
                     <FormGroup show={!this.props.result} label="Duration">
                         <p>{timerString(quiz.duration)}</p>
                     </FormGroup>
-                    {/* <FormGroup label="Description">
-                        <p>{quiz.description}</p>
-                    </FormGroup> */}
-                    <FormGroup label="Show All Question">
-                        {/* <ToggleButton onClick={this.toggleQuestionView}
-                            active={this.state.showAllQuestion}
-                        /> */}
+                   
+                    <FormGroup label="Show All Question"> 
                         {!quiz.showAllQuestion ? "No" : <ToggleButton onClick={this.toggleQuestionView}
                             active={this.state.showAllQuestion}
                         />}
                     </FormGroup>
-                </div>
+                </div> */}
                 {showAllQuestion ? questions.map((question, i) => {
                     return (<QuestionBody setChoice={this.setChoice} index={i} question={question} key={"pqqs-" + i} />)
                 }) :
