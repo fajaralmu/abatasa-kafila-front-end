@@ -13,12 +13,20 @@
 
 .home-wrapper {
   padding: 0;
+  padding-bottom: 500px;
   min-height: 95vh;
   margin: 0;
   background-image: url("../assets/footer.png");
   background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat;
+  animation: enter 1s linear forwards;
+}
+
+@keyframes enter {
+  to {
+    padding-bottom: 0px;
+  }
 }
 
 @media screen and (min-width: 992px) {
@@ -39,4 +47,19 @@
   background-position: bottom;
   background-size: contain;
   background-repeat: no-repeat;
+}
+.app-icon {
+  background-image: url('../assets/ABATASA_ICON.JPG');
+  background-size: cover;
+  background-position: center;
+}
+.quiz-wrapper { 
+  min-height: 90vh;
+  margin: 0;
+  background-image: url("../assets/footer.png");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-bottom: 250px;
+  padding-top: 20px;
 }
