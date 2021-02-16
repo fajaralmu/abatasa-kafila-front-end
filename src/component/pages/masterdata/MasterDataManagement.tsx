@@ -9,12 +9,19 @@ import MasterDataService from '../../../services/MasterDataService';
 import WebResponse from '../../../models/WebResponse';
 import EntityProperty from '../../../models/settings/EntityProperty';
 import MasterDataList from './MasterDataList';
-
+import AttachmentInfo from './../../../models/AttachmentInfo';
+import Filter from './../../../models/Filter';
+import WebRequest from './../../../models/WebRequest';
+import AnchorButton from './../../navigation/AnchorButton';
+class State {
+    entityProperty?:EntityProperty;
+}
 class MasterDataManagement extends BaseComponent {
     masterDataService: MasterDataService;
     code: string = "";
     loadingEntityProperty: boolean = false;
     entityProperty: undefined
+    state:State = new State();
     constructor(props: any) {
         super(props, true);
         this.masterDataService = this.getServices().masterDataService;
@@ -44,12 +51,12 @@ class MasterDataManagement extends BaseComponent {
             this.loadEntityProperty();
         }
     }
-    startLoading() {
-        //
+    startLoading(raltime:boolean) {
+        if (raltime==true) {
+            super.startLoading(raltime);
+        }
     }
-    endLoading() {
-        //
-    }
+     
     loadEntityProperty() {
 
         if (undefined == this.code && this.loadingEntityProperty == true) {
@@ -73,23 +80,55 @@ class MasterDataManagement extends BaseComponent {
         )
 
     }
+    printRecord = (filter: Filter) => {
+        const property = this.state.entityProperty;
+        if (!property) return;
+        this.showConfirmation("Print record? ")
+            .then(ok => {
+                if (!ok) return;
+                const req:WebRequest = {
+                    entity: property.entityName,
+                    filter: filter
+                }
+                this.commonAjaxWithProgress(
+                    this.masterDataService.generateReport,
+                    this.reportCreated,
+                    this.showCommonErrorAlert,
+                    req); 
+            })
+    }
+    reportCreated = (attachment: AttachmentInfo) => {
+        this.showConfirmation("Save File " + attachment.name + " ?")
+            .then((ok) => {
+                if (!ok) return;
+                Object.assign(document.createElement('a'), {
+                    target: '_blank',
+                    download: attachment.name,
+                    style: { display: 'none' },
+                    href: attachment.dataUrl,
+                }).click();
+            })
+
+    }
     render() {
         if (this.state.entityProperty == undefined) {
             return (
-                <div className="row container-fluid section-body" style={{paddingTop:'20px'}}>
-                   
+                <div className="row container-fluid section-body" style={{ paddingTop: '20px' }}>
+
                     <div className="col-4 text-right"><div className="spinner-border" role="status">
-                        
+
                     </div>
                     </div>
                     <div className="col-8"><h4>Loading configuration</h4></div>
                 </div>
             )
         }
+        const property = this.state.entityProperty;
         return (
             <div id="MasterDataManagement" className="container-fluid section-body">
                 <h2>{this.state.entityProperty.alias}</h2>
-                <MasterDataList entityProperty={this.state.entityProperty} />
+                
+                <MasterDataList printRecord={this.printRecord} entityProperty={this.state.entityProperty} />
             </div>
         )
     }

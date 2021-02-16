@@ -40,3 +40,14 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+
+.quiz-wrapper { 
+  min-height: 90vh;
+  margin: 0;
+  background-image: url("../assets/footer.png");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-bottom: 250px;
+  padding-top: 20px;
+}
