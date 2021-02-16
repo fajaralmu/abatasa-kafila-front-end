@@ -45,22 +45,30 @@ class Login extends BaseComponent {
     }
     render() {
         return (
-            <div id="LoginForm" className="login-wrapper" style={{ margin: 0, padding: 0 }}>
+            <div id="LoginForm" className="login-wrapper" style={{ margin: 0, padding: 0 }}> 
+                <div className="text-center" style={{ marginTop: '25px' }}>
+                    <svg className="x-app-icon " width="200" height="200">
+                        <circle className="path-circle" fill="white" cx="100" cy="100" r="95" strokeWidth={3} stroke="black" />
+                        {/* <path d="M 50 50 h 100 v 100 h -100 Z" fill="transparent" stroke="black"/> */}
+                        <path className="path" d="M 55 145 L 70 145 C 90 120, 110 115 140 102
+                            M 140 102 L 145 83 Q 125 85, 100 100 
+                            Q 80 98, 70 90 Q 68 85 72 80 Q 100 70, 125 73
+                            Q 86 35, 57 80 Q 48 110, 77 118
+                            Q 63 130 ,55 145
+                            " strokeWidth={3} stroke="black" fill="yellow" />
 
-                <p />
+                    </svg>
+                </div>
                 <form name='login' onSubmit={(e) => { this.login(e) }}
                     method='POST' className="form-signin">
-                    <div className="text-center">
-                        <h1><i className="fas fa-user-circle"></i></h1>
-                        <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
-                    </div>
                     <UsernameField value={this.state.username} onChange={this.updateCredentialProperty} />
                     <PasswordField value={this.state.editPassword} onChange={this.updateCredentialProperty} />
                     {this.state.loading ? <Spinner /> :
-                        <button className="btn btn-lg btn-success btn-block" type="submit">
+                        <button className="btn btn-lg btn-dark btn-block" type="submit">
                             Sign in
                         </button>}
                     <input name="transport_type" type="hidden" value="rest" />
+                    <p />
                 </form>
 
             </div>

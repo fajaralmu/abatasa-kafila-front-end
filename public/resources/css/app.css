@@ -40,7 +40,11 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-
+.app-icon {
+  background-image: url('../assets/ABATASA_ICON.JPG');
+  background-size: cover;
+  background-position: center;
+}
 .quiz-wrapper { 
   min-height: 90vh;
   margin: 0;
